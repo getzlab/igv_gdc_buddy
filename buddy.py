@@ -11,6 +11,7 @@ class URLHandler:
         self.cache = {}
         self.lock = Lock()
     def get_uuid_url(self, uuid):
+        from urllib.parse import urlparse, parse_qs
         with self.lock:
             if uuid in self.cache:
                 bam, bai = self.cache[uuid]
