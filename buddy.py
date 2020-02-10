@@ -35,15 +35,25 @@ handler = URLHandler()
 @app.route("/<uuid>.bam")
 def bam(uuid):
     bam_url = handler.get_bam(uuid)
-    ## FIXME: handle range request header
-    res = requests.get(bam_url)
+
+    range_header = request.headers.get("Range", None)
+    if range_header is not None:
+        res = requests.get(bam_url, headers={"Range": range_header})
+    else:
+        res = requests.get(bam_url)
+
     return (res.content, res.status_code, res.headers.items())
 
 @app.route("/<uuid>.bai")
 def bai(uuid):
     bai_url = handler.get_bai(uuid)
-    ## FIXME: handle range request header
-    res = requests.get(bai_url)
+
+    range_header = request.headers.get("Range", None)
+    if range_header is not None:
+        res = requests.get(bai_url, headers={"Range": range_header})
+    else:
+        res = requests.get(bai_url)
+
     return (res.content, res.status_code, res.headers.items())
 
 if __name__ == "__main__":
