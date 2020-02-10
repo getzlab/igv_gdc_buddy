@@ -1,5 +1,5 @@
 
-from flask import Flask
+from flask import Flask, request
 from signedbam import signedbam
 from threading import Lock
 import requests
