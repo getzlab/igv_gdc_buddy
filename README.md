@@ -16,10 +16,16 @@ It also requires a credential file called `credentials.json` within the same pat
 
 ## Run
 
-Run the script by
+First edit the `config.json`:
+- `credential_path`: the credential file for NCI Data Commons, The default would be "./credentials.json"
+- `user_project`: the google project to be billed for viewing requester-pays bucket. When the field is empty it will try to access by your default billing project.
+- `gdc_data_host`: We will need send http request to here in order to get corresponding url for given BAM. For legacy bams the path should be "https://api.gdc.cancer.gov/legacy/files/".
+
+Then run the script by
 ```
 python3 buddy.py
 ```
-while running the script, start IGV. Click "File" > "Load from URL".
+
+While running the script, start IGV. Click "File" > "Load from URL".
 In "File URL" field, type: "http://localhost:5000/[uuid].bam" in bam field and "http://localhost:5000/[uuid].bai" (Please replace [uuid] with GDC file UUID)
 
