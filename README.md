@@ -21,5 +21,5 @@ Run the script by
 python3 buddy.py
 ```
 while running the script, start IGV. Click "File" > "Load from URL".
-In "File URL" field, type: "http://localhost:5000/<uuid>.bam" in bam field and "http://localhost:5000/<uuid>.bai" (Please replace <uuid> with GDC file UUID)
+In "File URL" field, type: "http://localhost:5000/[uuid].bam" in bam field and "http://localhost:5000/[uuid].bai" (Please replace [uuid] with GDC file UUID)
 
