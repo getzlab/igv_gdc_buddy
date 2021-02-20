@@ -18,7 +18,7 @@ It also requires a credential file called `credentials.json` within the same pat
 
 First edit the `config.json`:
 - `credential_path`: the credential file for NCI Data Commons, The default would be "./credentials.json"
-- `gdc_data_host`: We will need send http request to here in order to get corresponding url for given BAM. For legacy bams the path should be "https://api.gdc.cancer.gov/legacy/files/".
+- `gdc_data_host`: We will need send http request to here in order to get corresponding url for given BAM. For legacy (hg19) bams the path should be "https://api.gdc.cancer.gov/legacy/files/"; for hg38 the path should be "https://api.gdc.cancer.gov/files/".
 - Please leave `user_project` empty for now.
 
 Next set our default active user project and `gcloud auth login` with your user account.
