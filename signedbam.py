@@ -25,7 +25,7 @@ def get_bai_uuid(uuid):
     file_with_indice = '?expand=index_files'
     response = requests.get(file_endpt + uuid + file_with_indice)
     res = response.json()
-    #return(res)
+    # print(res)
     bai_uuid = res['data']['index_files'][0]['file_id']
     return(bai_uuid)
 

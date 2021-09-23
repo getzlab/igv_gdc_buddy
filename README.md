@@ -30,5 +30,9 @@ python3 buddy.py
 ```
 
 While running the script, start IGV. Click "File" > "Load from URL".
-In "File URL" field, type: "http://localhost:5000/[uuid].bam" in bam field and "http://localhost:5000/[uuid].bai" (Please replace [uuid] with GDC file UUID)
+In "File URL" field, type: "http://localhost:5000/[uuid].bam" in bam field and "http://localhost:5000/[uuid].bai" (Please replace [uuid] with GDC file UUID, e.g. `http://localhost:5000/e7ab56c7-d9f3-40dc-ab13-808e7b0c8516.bam`)
 
+
+## Note
+
+`master` branch work with GDC legacy BAMs on hg19 if the data source is hosted by Google. `hg38` branch work with hg38 GCS BAMs (with changes in config), but not AWS-hosted data. PR is welcomed!

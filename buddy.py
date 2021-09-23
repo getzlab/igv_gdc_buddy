@@ -3,6 +3,7 @@ from flask import Flask, request
 from signedbam import signedbam
 from threading import Lock
 import requests
+import dateutil.parser
 
 app = Flask(__name__)
 
@@ -15,7 +16,11 @@ class URLHandler:
         with self.lock:
             if uuid in self.cache:
                 bam, bai = self.cache[uuid]
-                time_expires = min(int(parse_qs(urlparse(bai).query)['Expires'][0]), int(parse_qs(urlparse(bam).query)['Expires'][0]))
+                # print(parse_qs(urlparse(bai).query))
+                time_expires = min(
+                    int(dateutil.parser.isoparse(parse_qs(urlparse(bai).query)['x-goog-date'][0]).timestamp()), 
+                    int(dateutil.parser.isoparse(parse_qs(urlparse(bam).query)['x-goog-date'][0]).timestamp())
+                    )
                 from time import time
                 if time_expires - time() > 5 * 60:
                     return bam, bai

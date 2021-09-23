@@ -1,5 +1,5 @@
 {
-    "credential_path":"credentials.json",
+    "credential_path": "credentials_igv.json",
     "user_project": "",
-    "gdc_data_host": "https://api.gdc.cancer.gov/legacy/files/" 
+    "gdc_data_host": "https://api.gdc.cancer.gov/legacy/files/"
 }
